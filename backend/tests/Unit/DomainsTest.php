@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use packages\Domain\Domain\User\User;
 use packages\Domain\Domain\User\UserId;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class DomainsTest extends TestCase
 {

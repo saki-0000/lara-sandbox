@@ -1,5 +1,7 @@
 <?php
 
+namespace packages\Domain\Domain\User;
+
 use packages\Domain\Domain\User\User;
 use packages\Domain\Domain\User\UserId;
 

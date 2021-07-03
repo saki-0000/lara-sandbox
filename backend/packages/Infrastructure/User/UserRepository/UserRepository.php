@@ -1,11 +1,13 @@
 <?php
 
+namespace packages\Infrastructure\User\UserRepository;
+
 use Illuminate\Support\Facades\DB;
 use packages\Domain\Domain\User\User;
 use packages\Domain\Domain\User\UserId;
 use packages\Domain\Domain\User\UserRepositoryInterface;
 
-class UserRepository  implements UserRepositoryInterface
+class UserRepository implements UserRepositoryInterface
 {
 
     public function save(User $user): mixed
@@ -21,7 +23,7 @@ class UserRepository  implements UserRepositoryInterface
         return new User($id, $user->name);
     }
 
-    public function findByPage($page,  $size)
+    public function findByPage($page, $size): mixed
     {
         // TODO
     }
