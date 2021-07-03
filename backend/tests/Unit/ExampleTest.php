@@ -2,6 +2,8 @@
 
 namespace Tests\Unit;
 
+use packages\Domain\Domain\User\User;
+use packages\Domain\Domain\User\UserId;
 use PHPUnit\Framework\TestCase;
 
 class ExampleTest extends TestCase
@@ -13,6 +15,9 @@ class ExampleTest extends TestCase
      */
     public function test_example()
     {
-        $this->assertTrue(true);
+        $user = new User($userId, 'test_name');
+        $userId = new UserId('test_id');
+        $this->assertSame($user->getId()->getValue(), 'test_id');
+        $this->assertSame($user->getName(), 'test_name');
     }
 }
