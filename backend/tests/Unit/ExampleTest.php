@@ -15,8 +15,8 @@ class ExampleTest extends TestCase
      */
     public function test_example()
     {
-        $user = new User($userId, 'test_name');
         $userId = new UserId('test_id');
+        $user = new User($userId, 'test_name');
         $this->assertSame($user->getId()->getValue(), 'test_id');
         $this->assertSame($user->getName(), 'test_name');
     }

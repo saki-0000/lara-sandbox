@@ -18,7 +18,7 @@ class User
      * @param UserId $id
      * @param string $name
      */
-    public function __cunstruct(UserId $id, string $name)
+    public function __construct(UserId $id, string $name)
     {
         $this->id = $id;
         $this->name = $name;
