@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
+use packages\Domain\Domain\User\User;
+use packages\Domain\Domain\User\UserId;
 use packages\Domain\Domain\User\UserRepositoryInterface;
 
 class UserRepository  implements UserRepositoryInterface
@@ -7,15 +10,19 @@ class UserRepository  implements UserRepositoryInterface
 
     public function save(User $user): mixed
     {
-        DB::table('users')->updateOrInsert();
-        return;
+        DB::table('users')->updateOrInsert(
+            ['id' => $user->getId()],
+            ['name' => $user->getName()],
+        );
     }
-    public function find(UserId $user): User
+    public function find(UserId $id): User
     {
-        return new User();
+        $user = DB::table('users')->where('id', $id->getValue())->first();
+        return new User($id, $user->name);
     }
-    public function findByPage(int $page, int $size): mixed
+
+    public function findByPage($page,  $size)
     {
-        return;
+        // TODO
     }
 }
