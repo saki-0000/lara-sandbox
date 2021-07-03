@@ -6,14 +6,12 @@ use packages\Domain\Domain\User\User;
 use packages\Domain\Domain\User\UserId;
 use PHPUnit\Framework\TestCase;
 
-class ExampleTest extends TestCase
+class DomainsTest extends TestCase
 {
     /**
-     * A basic test example.
-     *
      * @return void
      */
-    public function test_example()
+    public function test_ユーザードメインとユーザーIDドメインの動作確認()
     {
         $userId = new UserId('test_id');
         $user = new User($userId, 'test_name');
